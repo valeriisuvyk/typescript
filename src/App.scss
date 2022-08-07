@@ -1,0 +1,126 @@
+*{
+    font-family: 'Edu QLD Beginner', cursive;
+// font-family: 'Edu SA Beginner', cursive;;   
+
+
+font-size: 20px;
+}
+p {
+line-height: 1px;
+}
+
+.buttonDeleteEditedStatistic {
+margin-bottom: 5px ;
+display: flex;
+}
+
+.StatisticWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+
+
+.StatisticDiv {
+    width: 75%;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background: rgb(255,235,205);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+.StatisticDivFirst {
+    padding-top: 10px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background: rgb(255,235,205);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.WrapperTodo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+
+}
+
+.ItemDiv {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;   
+    width: 100%;
+    
+}
+
+.DeleteDiv {
+    display: flex;
+    
+}
+
+.CreatedButton {
+    display: flex;
+    justify-content: space-between;
+    width: 72%;
+    margin-bottom: 5px;
+}
+
+.Input {
+    display: flex;
+    
+}
+
+.Layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    
+}
+
+.statistic {
+font-size: 30px;
+color: 		rgb(243, 120, 120);
+}
+
+// .divvv {
+//     height: 100vh;
+//     background: rgb(249, 249, 197);
+// }
+
+.Wrapper {
+    width: 25%;
+    height: 0%; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(250, 217, 161);
+    border-radius: 15px;
+    margin-top: 30px;
+    padding: 0px 20px;
+   
+}
+
+.layoutdiv {
+    min-height: 100vh;
+    background: rgb(249, 249, 197);
+    display: flex;
+    justify-content: center;
+}
+

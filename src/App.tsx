@@ -1,56 +1,70 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import "./App.scss";
+import Header from "./components/Header";
+import AddToDo from "./components/AddTodo";
+import ListToDo from "./components/ListToDo";
+import styled from "styled-components";
+import Statistics from "./components/Statistics";
+
+import { fetchTodos } from "./store/todoSlice";
+import { openModalWindow, closeModalWindow } from "./store/modalSlice";
+import React from "react";
+
+import Modal from "react-modal";
+import { useAppDispatch, useAppSelector } from "./hooks";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+const ButtonAddData = styled.button`
+  font-size: 22px;
+  padding: 3px 6px;
+  background: rgb(249, 249, 197);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+`;
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  const modalIsOpen: any = useAppSelector((state) => state.modal.toggle);
+  console.log(modalIsOpen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className="layoutdiv">
+      <div className="Wrapper">
+        <Header />
+        <ButtonAddData onClick={() => dispatch(fetchTodos())}>
+          add from server
+        </ButtonAddData>
+        <div>
+          <ButtonAddData onClick={() => dispatch(openModalWindow())}>
+            Add todo
+          </ButtonAddData>
+        </div>
+
+        <Modal
+          appElement={document.getElementById("root") as HTMLElement}
+          isOpen={modalIsOpen}
+          onRequestClose={() => dispatch(closeModalWindow())}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <AddToDo />
+        </Modal>
+
+        <Statistics />
+        <ListToDo />
+      </div>
     </div>
   );
 }
