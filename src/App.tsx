@@ -37,7 +37,6 @@ function App() {
   const dispatch = useAppDispatch();
 
   const modalIsOpen: boolean = useAppSelector((state) => state.modal.toggle);
-  console.log(modalIsOpen);
 
   return (
     <div className="layoutdiv">

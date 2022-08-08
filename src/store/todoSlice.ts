@@ -47,8 +47,8 @@ export const fetchTodos = createAsyncThunk(
         title: obj.text,
         id: uuidv4(),
         status: obj.isCompleted,
-        color: `rgb(${randColor(0, 255)}, ${randColor(0, 255)}, ${randColor(
-          0,
+        color: `rgb(${randColor(150, 255)}, ${randColor(150, 255)}, ${randColor(
+          150,
           255
         )})`,
       };
@@ -66,8 +66,8 @@ export const todoSlice = createSlice({
           id: new Date().toISOString(),
           title: action.payload,
           status: true,
-          color: `rgb(${randColor(0, 255)}, ${randColor(0, 255)}, ${randColor(
-            0,
+          color: `rgb(${randColor(150, 255)}, ${randColor(150, 255)}, ${randColor(
+            150,
             255
           )})`,
         });
