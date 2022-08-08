@@ -36,7 +36,7 @@ const ButtonAddData = styled.button`
 function App() {
   const dispatch = useAppDispatch();
 
-  const modalIsOpen: any = useAppSelector((state) => state.modal.toggle);
+  const modalIsOpen: boolean = useAppSelector((state) => state.modal.toggle);
   console.log(modalIsOpen);
 
   return (

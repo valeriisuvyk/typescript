@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface ToggleState {
-  toggle: Boolean;
+  toggle: boolean;
 }
 
 const initialState: ToggleState = {
